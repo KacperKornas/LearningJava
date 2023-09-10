@@ -1,12 +1,22 @@
 public class Hello {
     public static void main(String[] args) {
-        System.out.println("Hello, Tim");
 
-        boolean isAlien = false;
-        if (isAlien == false) {
-            System.out.println("It is not an alien!");
-            System.out.println("And I am scared of aliens.");
-        }
+
+        double firstValue = 20;
+        double secondValue = 80;
+        double calculations = (firstValue + secondValue) * 100;
+        System.out.println("calculations = " + calculations);
+        double remainder = calculations % 40;
+        System.out.println("remainder = " + remainder);
+
+
+        boolean checkZero = remainder == 0;
+        System.out.println(checkZero);
+
+
+        if (!checkZero)
+            System.out.println("I got some remainder!");
+
     }
-
 }
+
