@@ -1,5 +1,6 @@
 public class FirstMethodChallenges {
     public static void main(String[] args) {
+
         displayHighScorePosition("Tim", calculateHighScorePosition(1500));
         displayHighScorePosition("Bob", calculateHighScorePosition(1000));
         displayHighScorePosition("Percy", calculateHighScorePosition(500));
