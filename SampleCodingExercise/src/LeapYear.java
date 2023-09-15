@@ -19,21 +19,3 @@ public class LeapYear {
         return false;
     }
 }
-
-
-//    public static boolean isLeapYear(int year) {
-//        if ((year >= 1) && (year <= 9999)) {
-//            int fourLeapYear = year % 4;
-//            if (fourLeapYear == 0){
-//                int hundredLeapYear = year % 100;
-//                if ((hundredLeapYear == 0) && (fourLeapYear == 0)) {
-//                    int fourHundredLeapYear = year % 400;
-//                    if ((hundredLeapYear == 0) && (fourLeapYear == 0) && (fourHundredLeapYear == 0)) {
-//                        return true;
-//                    }
-//                }
-//            }
-//        }
-//        return false;
-//    }
-//}
