@@ -1,9 +1,9 @@
 public class EqualityPrinter {
     public static void main(String[] args) {
-//        System.out.println(printEqual(1,1,1));
-//        System.out.println(printEqual(1,1,2));
-//        System.out.println(printEqual(-1,-1,-1));
-//        System.out.println(printEqual(1,2,3));
+        printEqual(1,1,1);
+        printEqual(1,1,2);
+        printEqual(-1,-1,-1);
+        printEqual(1,2,3);
     }
 
     public static void printEqual(int first, int second, int third) {
