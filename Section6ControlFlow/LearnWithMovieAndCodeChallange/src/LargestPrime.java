@@ -15,7 +15,7 @@ public class LargestPrime {
         int largestPrime = -1;
 
         for (int i = 2; i <= number; i++) {
-            while (number % i == 0){
+            while (number % i == 0) {
                 largestPrime = i;
                 number /= i;
             }
