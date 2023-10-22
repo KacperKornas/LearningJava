@@ -15,10 +15,15 @@ public class Main {
         Worker worker = new Worker("mateo", "21/10/1999");
         System.out.println(worker);
         System.out.println(worker.getAge());
-        System.out.println(worker.collectPay());
 
 
-//        SalariedEmployee mat = new SalariedEmployee();
-//        System.out.println(mat.getAge());
+        SalariedEmployee matt = new SalariedEmployee("Matt", "15/3/2000", "12/05/2020", 35000);
+        System.out.println("Matt's Paycheck = $" + matt.collectPay());
+        matt.retire();
+        System.out.println(matt.collectPay());
+
+        HourlyEmployee tom = new HourlyEmployee("Tom", "15/3/2000", "12/05/2020", 15);
+        System.out.println(tom.getDoublePay());
+
     }
 }
