@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.radiobuttons.Controller">
+   <children>
+      <Label fx:id="myLabel" alignment="CENTER" contentDisplay="RIGHT" layoutX="15.0" layoutY="89.0" prefHeight="45.0" prefWidth="570.0" text="something to eat" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="radio1" layoutX="100.0" layoutY="218.0" mnemonicParsing="false" onAction="#select" text="pizza">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="food" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="radio2" layoutX="264.0" layoutY="218.0" mnemonicParsing="false" onAction="#select" text="sushi" toggleGroup="$food">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="radio3" layoutX="418.0" layoutY="218.0" mnemonicParsing="false" onAction="#select" text="ramen" toggleGroup="$food">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </RadioButton>
+   </children>
+</AnchorPane>
