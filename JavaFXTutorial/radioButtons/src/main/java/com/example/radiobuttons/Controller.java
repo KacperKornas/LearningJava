@@ -12,7 +12,7 @@ public class Controller {
     Label myLabel;
 
     public void select() {
-        
+
         if (radio1.isSelected()) {
             myLabel.setText("pizza");
         } else if (radio2.isSelected()) {
