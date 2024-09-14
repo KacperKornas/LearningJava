@@ -35,7 +35,7 @@ public class Controller implements Initializable {
 
 
         rootItem.getChildren().addAll(branchItem1, branchItem2, branchItem3);
-        
+
         treeView.setRoot(rootItem);
 
     }
