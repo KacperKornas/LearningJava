@@ -24,13 +24,17 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        file = new File("C:\\Users\\Kacper\\Desktop\\java_work\\JavaFXTutorial\\mediaView\\src\\main\\resources\\com\\example\\mediaview\\videoplayback.mp4");
+        file = new File("src/main/resources/com/example/mediaview/videoplayback.mp4");
         media = new Media(file.toURI().toString());
+        mediaPlayer = new MediaPlayer(media);
+        mediaView.setMediaPlayer(mediaPlayer);
+
 
 
     }
 
     public void playMedia() {
+        mediaPlayer.play();
 
     }
     public void pauseMedia() {
