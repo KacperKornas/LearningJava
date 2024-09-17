@@ -1,4 +1,4 @@
-package com.example.lastone;
+package com.example.webbrowser;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
