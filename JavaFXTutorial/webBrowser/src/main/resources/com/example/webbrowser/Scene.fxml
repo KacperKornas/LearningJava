@@ -10,5 +10,12 @@
       <WebView fx:id="webView" layoutY="65.0" prefHeight="608.0" prefWidth="899.0" />
       <Button layoutY="40.0" mnemonicParsing="false" onAction="#loadPage" text="load" />
       <TextField fx:id="textField" layoutX="38.0" layoutY="14.0" onAction="#loadPage" prefHeight="25.0" prefWidth="828.0" />
+      <Button layoutX="40.0" layoutY="40.0" mnemonicParsing="false" onAction="#refreshPage" text="refresh" />
+      <Button layoutX="93.0" layoutY="40.0" mnemonicParsing="false" onAction="#zoomIN" text="+" />
+      <Button layoutX="118.0" layoutY="40.0" mnemonicParsing="false" onAction="#zoomOut" text="-" />
+      <Button layoutX="139.0" layoutY="40.0" mnemonicParsing="false" onAction="#displayHistory" text="history" />
+      <Button layoutX="191.0" layoutY="40.0" mnemonicParsing="false" onAction="#back" text="back" />
+      <Button layoutX="232.0" layoutY="40.0" mnemonicParsing="false" onAction="#forward" text="forward" />
+      <Button layoutX="289.0" layoutY="40.0" mnemonicParsing="false" onAction="#executeJS" text="execute JS" />
    </children>
 </AnchorPane>
