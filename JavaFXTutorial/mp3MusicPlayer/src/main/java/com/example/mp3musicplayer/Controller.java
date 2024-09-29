@@ -5,6 +5,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.util.Duration;
 
 import java.io.File;
 import java.net.URL;
@@ -24,9 +27,12 @@ public class Controller implements Initializable {
     @FXML
     private Slider volumeSlider;
     @FXML
-    private ComboBox<String> speedButton;
+    private ComboBox<String> speedBox;
     @FXML
     private ProgressBar songProgressBar;
+
+    private Media media;
+    private MediaPlayer mediaPlayer;
 
     private File directory;
     private File[] files;
@@ -43,30 +49,109 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        songs = new ArrayList<File>();
+
+        directory = new File("music");
+
+        files = directory.listFiles();
+
+        if(files != null) {
+
+            for(File file : files) {
+                songs.add(file);
+                System.out.println(file);
+            }
+        }
+
+        media = new Media(songs.get(songNumber).toURI().toString());
+        mediaPlayer = new MediaPlayer(media);
+
+        songLabel.setText(songs.get(songNumber).getName());
+
+        for (int i = 0; i < speeds.length; i++) {
+
+            speedBox.getItems().add(Integer.toString(speeds[i])+"%");
+        }
+
+        speedBox.setOnAction(this::changeSpeed);
     }
 
     public void playMedia() {
 
+        changeSpeed(null);
+        mediaPlayer.play();
     }
 
     public void pauseMedia() {
 
+        mediaPlayer.pause();
     }
 
     public void resetMedia() {
 
+        mediaPlayer.seek(Duration.seconds(0));
     }
 
     public void previousMedia() {
+
+        if(songNumber > 0) {
+            songNumber--;
+            mediaPlayer.stop();
+
+            media = new Media(songs.get(songNumber).toURI().toString());
+            mediaPlayer = new MediaPlayer(media);
+
+            songLabel.setText(songs.get(songNumber).getName());
+
+            playMedia();
+        }
+        else {
+
+            songNumber = songs.size() - 1;
+            mediaPlayer.stop();
+
+            media = new Media(songs.get(songNumber).toURI().toString());
+            mediaPlayer = new MediaPlayer(media);
+
+            songLabel.setText(songs.get(songNumber).getName());
+
+            playMedia();
+        }
 
     }
 
     public void nextMedia() {
 
+        if(songNumber < songs.size() - 1) {
+            songNumber++;
+            mediaPlayer.stop();
+
+            media = new Media(songs.get(songNumber).toURI().toString());
+            mediaPlayer = new MediaPlayer(media);
+
+            songLabel.setText(songs.get(songNumber).getName());
+
+            playMedia();
+        }
+        else {
+
+            songNumber = 0;
+            mediaPlayer.stop();
+
+            media = new Media(songs.get(songNumber).toURI().toString());
+            mediaPlayer = new MediaPlayer(media);
+
+            songLabel.setText(songs.get(songNumber).getName());
+
+            playMedia();
+        }
     }
 
     public void changeSpeed(ActionEvent event) {
 
+        if (speedBox.getValue() != null) {
+            mediaPlayer.setRate(Integer.parseInt(speedBox.getValue().substring(0, speedBox.getValue().length() -1)) * 0.01);
+        }
     }
 
     public void beginTimer() {
