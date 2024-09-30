@@ -1,5 +1,7 @@
 package com.example.mp3musicplayer;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -74,21 +76,35 @@ public class Controller implements Initializable {
         }
 
         speedBox.setOnAction(this::changeSpeed);
+
+        volumeSlider.valueProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+
+                mediaPlayer.setVolume(volumeSlider.getValue() * 0.01);
+            }
+        });
+
+        songProgressBar.setStyle("-fx-accent: #00FF00;");
     }
 
     public void playMedia() {
 
+        beginTimer();
         changeSpeed(null);
+        mediaPlayer.setVolume(volumeSlider.getValue() * 0.01);
         mediaPlayer.play();
     }
 
     public void pauseMedia() {
 
+        cancelTimer();
         mediaPlayer.pause();
     }
 
     public void resetMedia() {
 
+        songProgressBar.setProgress(0);
         mediaPlayer.seek(Duration.seconds(0));
     }
 
@@ -97,6 +113,10 @@ public class Controller implements Initializable {
         if(songNumber > 0) {
             songNumber--;
             mediaPlayer.stop();
+
+            if(running) {
+                cancelTimer();
+            }
 
             media = new Media(songs.get(songNumber).toURI().toString());
             mediaPlayer = new MediaPlayer(media);
@@ -109,6 +129,10 @@ public class Controller implements Initializable {
 
             songNumber = songs.size() - 1;
             mediaPlayer.stop();
+
+            if(running) {
+                cancelTimer();
+            }
 
             media = new Media(songs.get(songNumber).toURI().toString());
             mediaPlayer = new MediaPlayer(media);
@@ -126,6 +150,10 @@ public class Controller implements Initializable {
             songNumber++;
             mediaPlayer.stop();
 
+            if(running) {
+                cancelTimer();
+            }
+
             media = new Media(songs.get(songNumber).toURI().toString());
             mediaPlayer = new MediaPlayer(media);
 
@@ -137,6 +165,10 @@ public class Controller implements Initializable {
 
             songNumber = 0;
             mediaPlayer.stop();
+
+            if(running) {
+                cancelTimer();
+            }
 
             media = new Media(songs.get(songNumber).toURI().toString());
             mediaPlayer = new MediaPlayer(media);
@@ -156,9 +188,31 @@ public class Controller implements Initializable {
 
     public void beginTimer() {
 
+        timer = new Timer();
+
+        task = new TimerTask() {
+            @Override
+            public void run() {
+
+                running = true;
+                double current = mediaPlayer.getCurrentTime().toSeconds();
+                double end = media.getDuration().toSeconds();
+                songProgressBar.setProgress(current/end);
+
+                if(current/end == 1) {
+                    cancelTimer();
+                }
+            }
+        };
+
+        timer.scheduleAtFixedRate(task, 0, 1000);
     }
 
     public void cancelTimer() {
 
+        if (timer != null) {
+            running = false;
+            timer.cancel();
+        }
     }
 }
