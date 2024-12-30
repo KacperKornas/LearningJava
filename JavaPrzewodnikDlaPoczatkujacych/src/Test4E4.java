@@ -3,7 +3,7 @@ public class Test4E4 {
         MyCounter counter;
         counter = new MyCounter();
     }
-    
+
     static class MyCounter {
     }
 }
