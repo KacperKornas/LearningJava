@@ -2,49 +2,49 @@ public class QDemo {
     public static void main(String[] args) {
         Queue bigQ = new Queue(100);
         Queue smallQ = new Queue(4);
-        char ch;
+        double d;
         int i;
 
         System.out.println("BigQ przechowuje alfabet.");
         for (i = 0; i <26; i++) {
-            bigQ.put((char) ('A' + i));
+            bigQ.put(1 + i);
         }
 
         System.out.println("Zawartość kolejki bigQ: ");
         for (i=0; i < 26; i ++) {
-            ch = bigQ.get();
-            if (ch != (char) 0) System.out.print(ch);
+            d = bigQ.get();
+            if (d != 0) System.out.print(d + ", ");
         }
 
         System.out.println("\n");
 
         System.out.println("Używam kolejki smallQ do wygenerowania błędów.");
         for (i=0; i < 5; i++) {
-            System.out.println("Próbuję umieścić w kolejce znak " + (char) ( 'Z' - i ));
-            smallQ.put((char) ( 'Z' - i ));
+            System.out.println("Próbuję umieścić w kolejce znak " + (26 - i ));
+            smallQ.put(26 - i );
         }
 
         System.out.println();
 
         System.out.print("Zawartość kolejki smallQ: ");
         for (i=0; i < 5; i++) {
-            ch = smallQ.get();
+            d = smallQ.get();
 
-            if(ch != (char) 0) System.out.print(ch);
+            if(d != 0) System.out.print(d + ", ");
         }
     }
 }
 
 class Queue {
-    char[] q;
+    double[] q;
     int putloc, getloc;
 
     Queue(int size) {
-        q = new char[size];
+        q = new double[size];
         putloc = getloc = 0;
     }
 
-    void put(char ch) {
+    void put(double ch) {
         if(putloc==q.length) {
             System.out.println(" -- Queue is full.");
             return;
@@ -53,10 +53,10 @@ class Queue {
         q[putloc++] = ch;
     }
 
-    char get() {
+    double get() {
         if (getloc == putloc) {
             System.out.println(" -- Queue is empty");
-            return (char) 0;
+            return 0;
         }
 
         return q[getloc++];
