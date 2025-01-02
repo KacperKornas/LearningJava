@@ -20,7 +20,7 @@ public class MatrixRotation {
 
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < columns; j++) {
-                System.out.print(STR."\{rotatedMatrix[i][j]} ");
+                System.out.print(rotatedMatrix[i][j]);
             }
             System.out.println();
         }

@@ -15,7 +15,7 @@ public class NumberToMonth {
                 }
 
             String month = listOfMonth(number);
-            System.out.println(STR."\n\{month}\n");
+            System.out.println(month);
         } while (true);
     }
 

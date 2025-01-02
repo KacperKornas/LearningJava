@@ -49,7 +49,7 @@ public class HighAndLow {
         }
 
         public void printResults() {
-            System.out.println(STR."Minimum: \{min}");
-            System.out.println(STR."Maximum: \{max}");
+            System.out.println("Minimum: " + min);
+            System.out.println("Maximum: " + max);
         }
     }
