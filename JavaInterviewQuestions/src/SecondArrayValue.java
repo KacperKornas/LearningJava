@@ -3,6 +3,7 @@
 
 public class SecondArrayValue {
     public static void main(String[] args) {
+
         int[] odd = new int[50];
         int[] even = new int[50];
 
@@ -23,7 +24,6 @@ public class SecondArrayValue {
         for (int i = 0; i < even.length; i += 2) {
             System.out.print(even[i] + " ");
         }
-
     }
 }
 
