@@ -12,7 +12,7 @@ public class Bubble {
 
         System.out.println("Primary array:");
         for(int i = 0; i < size; i++)
-            System.out.println(" " + nums[i]);
+            System.out.print(" " + nums[i]);
         System.out.println();
 
         for(a=1; a < size; a++)
@@ -25,7 +25,7 @@ public class Bubble {
             }
         System.out.println("Posortowana tablica:");
         for (int i = 0; i < size; i++)
-            System.out.println(" " + nums[i]);
+            System.out.print(" " + nums[i]);
         System.out.println();
     }
 }
