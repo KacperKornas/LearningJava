@@ -11,7 +11,7 @@ public class Test5E7 {
         for(int i=0; i < msg.length(); i++)
             encmsg = encmsg + (char) ( msg.charAt(i) ^ key.charAt(i % key.length()));
 
-        System.out.println("Encrypted message: ");
+        System.out.print("Encrypted message: ");
         System.out.println(encmsg);
 
         for(int i=0; i < msg.length(); i++)
