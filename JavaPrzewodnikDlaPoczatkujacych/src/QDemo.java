@@ -36,8 +36,8 @@ public class QDemo {
 }
 
 class Queue {
-    double[] q;
-    int putloc, getloc;
+    private double q[];
+    private int putloc, getloc;
 
     Queue(int size) {
         q = new double[size];
