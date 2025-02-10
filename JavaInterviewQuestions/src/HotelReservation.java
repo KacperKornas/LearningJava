@@ -33,28 +33,28 @@ class HotelReservationSystem {
     }
 
     boolean bookRoom(int roomNumber, String name) {
-        if (reservationList.get(roomNumber) == "Empty") {
+        if (reservationList.get(roomNumber).equals("Empty")) {
             reservationList.put(roomNumber, name);
             return true;
         } else return false;
     }
 
     boolean cancelReservation(int roomNumber) {
-        if (reservationList.get(roomNumber) == "Empty") return false;
+        if (reservationList.get(roomNumber).equals("Empty")) return false;
         else {
             reservationList.put(roomNumber, "Empty");
         } return true;
     }
 
     String checkReservation(int roomNumber) {
-        if (reservationList.get(roomNumber) == "Empty") return null;
+        if (reservationList.get(roomNumber).equals("Empty")) return null;
         else return reservationList.get(roomNumber);
     }
 
     void showList() {
         System.out.println("\n");
         for (int i = 1; i <= 10; i++) {
-            System.out.println("Room " + i + ": " + reservationList.get(i));
+            System.out.println(STR."Room \{i}: \{reservationList.get(i)}");
         }
         System.out.println("\n");
     }
