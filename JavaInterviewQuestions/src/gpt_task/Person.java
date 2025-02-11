@@ -1,24 +1,19 @@
 package gpt_task;
 
-class Try {
+class FirstTask {
     public static void main(String[] args) {
         Person first = new Person("Adam", 15);
         Person second = new Person("Mia", 25);
         Person third = new Person("Michael", 18);
         Person fourth = new Person("Michael", 18);
 
-        System.out.println(first.isAdult());
-        System.out.println(second.isAdult());
-        System.out.println(third.isAdult());
-        System.out.println(fourth.isAdult());
+        System.out.println(first.getName() + " is adult? " + first.isAdult());
+        System.out.println(second.getName() + " is adult? " + second.isAdult());
+        System.out.println(third.getName() + " is adult? " + third.isAdult());
+        System.out.println(fourth.getName() + " is adult? " + fourth.isAdult());
 
-        System.out.println(first.getName());
-        System.out.println(second.getName());
-        first.setName("Kapeć");
-        second.setName("Max");
-        System.out.println(first.getName());
-        System.out.println(second.getName());
-
+        first.setName("Max");
+        System.out.println("New name: " + first.getName());
     }
 }
 
