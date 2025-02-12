@@ -54,7 +54,7 @@ class HotelReservationSystem {
     void showList() {
         System.out.println("\n");
         for (int i = 1; i <= 10; i++) {
-            System.out.println(STR."Room \{i}: \{reservationList.get(i)}");
+            System.out.println("Room " + i + ": " + reservationList.get(i));
         }
         System.out.println("\n");
     }
