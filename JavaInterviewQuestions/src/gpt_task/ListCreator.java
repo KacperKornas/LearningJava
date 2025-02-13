@@ -1,6 +1,7 @@
 package gpt_task;
 
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.Scanner;
 
 public class ListCreator {
@@ -42,15 +43,7 @@ public class ListCreator {
     }
 
     public void deleteDuplicate() {
-        ArrayList<Integer> uniqueNumbers = new ArrayList<>();
-
-        for (int number : numbers) {
-            if (!uniqueNumbers.contains(number)) {
-                uniqueNumbers.add(number);
-            }
-        }
-
-        numbers = uniqueNumbers;
+        numbers = new ArrayList<>(new LinkedHashSet<>(numbers));
         System.out.print("Unique list: ");
         showList();
     }
