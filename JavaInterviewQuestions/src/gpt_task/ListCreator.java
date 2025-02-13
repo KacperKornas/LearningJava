@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class ListCreator {
 
     String text;
-    ArrayList<Integer> numbers = new ArrayList<Integer>();
+    ArrayList<Integer> numbers = new ArrayList<>();
 
     public void enterNumbers() {
         Scanner scanner = new Scanner(System.in);
@@ -15,26 +15,65 @@ public class ListCreator {
     }
 
     public void listCreator() {
-        int a;
-        for (int i = 0; i < text.length(); i += 2) {
-            a = text.charAt(i);
-            numbers.add(a);
+        String[] str = text.split(" ");
+        int value;
+
+        for (String s : str) {
+            value = Integer.parseInt(s);
+            numbers.add(value);
         }
+
+        System.out.print("Created list: ");
     }
 
     public void showList() {
         for (int number : numbers) {
             System.out.print(number + " ");
         }
+        System.out.println();
     }
 
+    public void sortNumbers() {
+        numbers.sort(null);
+        System.out.print("Sorted list: ");
+        showList();
+    }
 
+    public void deleteDuplicate() {
+        ArrayList<Integer> uniqueNumbers = new ArrayList<>();
 
+        for (int number : numbers) {
+            if (!uniqueNumbers.contains(number)) {
+                uniqueNumbers.add(number);
+            }
+        }
 
+        numbers = uniqueNumbers;
+        System.out.print("Unique list: ");
+        showList();
+    }
+
+    public void sum() {
+        int sum = 0;
+        double average;
+
+        for (int number : numbers) {
+            sum += number;
+        }
+
+        average = (double) sum / numbers.size();
+
+        System.out.println("Sum: " + sum + "\nAverage :" + average);
+    }
+
+    
     public static void main(String[] args) {
         ListCreator list = new ListCreator();
         list.enterNumbers();
         list.listCreator();
         list.showList();
+        list.sortNumbers();
+        list.deleteDuplicate();
+        list.sum();
     }
 }
