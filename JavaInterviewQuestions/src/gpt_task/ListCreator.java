@@ -27,6 +27,7 @@ public class ListCreator {
         }
 
         System.out.print("Created list: ");
+        showList();
     }
 
     public void showList() {
@@ -57,7 +58,6 @@ public class ListCreator {
         }
 
         average = (double) sum / numbers.size();
-
         System.out.println("Sum: " + sum + "\nAverage: " + average);
     }
 
@@ -66,7 +66,6 @@ public class ListCreator {
         ListCreator list = new ListCreator();
         list.enterNumbers();
         list.listCreator();
-        list.showList();
         list.sortNumbers();
         list.deleteDuplicate();
         list.sum();
