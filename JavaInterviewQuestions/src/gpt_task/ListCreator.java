@@ -16,11 +16,13 @@ public class ListCreator {
 
     public void listCreator() {
         String[] str = text.split(" ");
-        int value;
 
         for (String s : str) {
-            value = Integer.parseInt(s);
-            numbers.add(value);
+            try {
+            numbers.add(Integer.parseInt(s));
+            } catch (NumberFormatException e ) {
+                System.out.println("Invalid value omitted: '" + s + "'");
+            }
         }
 
         System.out.print("Created list: ");
@@ -63,7 +65,7 @@ public class ListCreator {
 
         average = (double) sum / numbers.size();
 
-        System.out.println("Sum: " + sum + "\nAverage :" + average);
+        System.out.println("Sum: " + sum + "\nAverage: " + average);
     }
 
     
