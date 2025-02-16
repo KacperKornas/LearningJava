@@ -27,7 +27,7 @@ class Person {
         Person third = new Person("Michael", 18);
         Person fourth = new Person("Michael", 18);
 
-        System.out.println(first.getName() + " is adult? " + first.isAdult());
+        System.out.println(STR."\{first.getName()} is adult? \{first.isAdult()}");
         System.out.println(second.getName() + " is adult? " + second.isAdult());
         System.out.println(third.getName() + " is adult? " + third.isAdult());
         System.out.println(fourth.getName() + " is adult? " + fourth.isAdult());
