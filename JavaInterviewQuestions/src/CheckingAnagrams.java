@@ -14,17 +14,12 @@ public class CheckingAnagrams {
     boolean areAnagrams(String str1, String str2) {
         if (str1.length() != str2.length()) return false;
 
-        Set<Character> sList1 = new TreeSet<Character>();
-        Set<Character> sList2 = new TreeSet<Character>();
+        char[] chars1 = str1.toCharArray();
+        char[] chars2 = str2.toCharArray();
 
-        for (int i = 0; i <= str1.length() - 1; i++) {
-            sList1.add(str1.charAt(i));
-        }
+        Arrays.sort(chars1);
+        Arrays.sort(chars2);
 
-        for (int i = 0; i <= str2.length() - 1; i++) {
-            sList2.add(str2.charAt(i));
-        }
-
-        return sList1.equals(sList2);
+        return Arrays.equals(chars1, chars2);
     }
 }
