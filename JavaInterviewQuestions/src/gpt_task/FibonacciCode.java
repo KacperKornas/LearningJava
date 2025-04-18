@@ -1,3 +1,5 @@
+package gpt_task;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 

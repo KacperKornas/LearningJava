@@ -1,3 +1,5 @@
+package gpt_task;
+
 public class CountingCharString {
     public static void main(String[] args) {
         CountingChar counter = new CountingChar();

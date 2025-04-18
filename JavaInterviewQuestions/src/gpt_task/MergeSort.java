@@ -1,3 +1,5 @@
+package gpt_task;
+
 public class MergeSort {
     public static void main(String[] args) {
         MergeSort m = new MergeSort();

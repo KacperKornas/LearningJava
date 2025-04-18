@@ -1,3 +1,5 @@
+package gpt_task;
+
 public class ReversingString {
     public static void main(String[] args) {
         String text = "Hello, World!";

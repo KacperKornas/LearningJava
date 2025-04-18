@@ -1,3 +1,5 @@
+package gpt_task;
+
 import java.util.*;
 
 public class CheckingAnagrams {
