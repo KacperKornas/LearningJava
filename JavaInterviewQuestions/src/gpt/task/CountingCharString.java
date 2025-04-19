@@ -1,4 +1,4 @@
-package gpt_task;
+package gpt.task;
 
 public class CountingCharString {
     public static void main(String[] args) {

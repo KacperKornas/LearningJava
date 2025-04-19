@@ -1,6 +1,4 @@
-package gpt_task;
-
-import java.util.ArrayList;
+package gpt.task;
 
 public class ReversingSentence {
     public static void main(String[] args) {

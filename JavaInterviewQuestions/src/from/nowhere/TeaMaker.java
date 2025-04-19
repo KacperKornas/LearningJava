@@ -1,3 +1,5 @@
+package from.nowhere;
+
 public class TeaMaker {
     public static void main(String[] args) {
         String water = "zimna woda";

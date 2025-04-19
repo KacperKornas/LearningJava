@@ -1,4 +1,4 @@
-// Write a program that prints every other element of your array.
+package from.nowhere;// Write a program that prints every other element of your array.
 // The first array contains even values and the second array contains odd values.
 
 public class SecondArrayValue {

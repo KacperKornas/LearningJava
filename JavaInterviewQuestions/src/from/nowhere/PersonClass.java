@@ -1,3 +1,5 @@
+package from.nowhere;
+
 public class PersonClass {
     public static void main(String[] args) {
         Person person = new Person();

@@ -1,3 +1,5 @@
+package from.nowhere;
+
 public class OneToTen {
     public static void main(String[] args) {
         int i;

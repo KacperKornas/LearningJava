@@ -1,6 +1,4 @@
-package gpt_task;
-
-import java.util.Arrays;
+package gpt.task;
 
 public class ConvertingToRomanNumerals {
     public static void main(String[] args) {

@@ -1,3 +1,5 @@
+package from.nowhere;
+
 import java.util.Scanner;
 public class MatrixRotation {
     public static void main(String[] args) {

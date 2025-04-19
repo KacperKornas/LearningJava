@@ -1,4 +1,4 @@
-package gpt_task;
+package gpt.task;
 
 import java.util.ArrayList;
 import java.util.LinkedHashSet;

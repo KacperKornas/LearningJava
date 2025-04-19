@@ -1,4 +1,4 @@
-package gpt_task;
+package gpt.task;
 
 class Person {
     private String name;

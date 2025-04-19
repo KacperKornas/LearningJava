@@ -1,3 +1,5 @@
+package from.nowhere;
+
 public class BetterSecondArrayValue {
     public static void main(String[] args) {
         CreateArrays odd = new CreateArrays(50, 1, 2);
