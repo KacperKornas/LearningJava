@@ -8,7 +8,6 @@ public class FirstNonRepeatingCharacterTest {
 
     @Test
     void testFirstNonRepeating() {
-        FirstNonRepeatingCharacter nonR = new FirstNonRepeatingCharacter();
         assertEquals('l', FirstNonRepeatingCharacter.findNonRepeat("leetcode"));
         assertEquals(' ', FirstNonRepeatingCharacter.findNonRepeat("aabb"));
         assertEquals('c', FirstNonRepeatingCharacter.findNonRepeat("aabbc"));
