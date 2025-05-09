@@ -2,10 +2,16 @@ package codility;
 
 public class PalindromeNumber {
     public boolean isPalindrome(int x) {
-        String str = Integer.toString(x);
-        for(int i = 0; i < str.length() / 2; i++) {
-            if (str.charAt(i) != str.charAt(str.length() -1 - i)) return false;
+
+        if(0 > x || (x % 10 == 0 && x != 0)) return false;
+
+        int reverse = 0;
+
+        while (x > reverse) {
+            reverse = reverse * 10 + x % 10;
+            x /= 10;
         }
-        return true;
+
+        return x == reverse || x == reverse / 10;
     }
 }
