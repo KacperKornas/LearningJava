@@ -2,13 +2,15 @@ package LeetCode;
 
 public class T0121_BestTimeToBuyAndSellStock {
     public int maxProfit(int[] prices) {
+        int minPrice = Integer.MAX_VALUE;
+        int bestProfit = 0;
 
-        int bestDay = 0;
-        for(int i = 0; i < prices.length; i++) {
-            for(int j = i + 1; j < prices.length; j++) {
-                if(prices[j] - prices[i] > bestDay) bestDay = prices[j] - prices[i];
+        for(int price : prices) {
+            if(price < minPrice) {
+                minPrice = price;
+            } else if (price - minPrice > bestProfit) {
+                bestProfit = price - minPrice;
             }
-        }
-        return bestDay;
+        } return bestProfit;
     }
 }
