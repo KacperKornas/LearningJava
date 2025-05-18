@@ -1,8 +1,6 @@
 package LeetCode;
 
-import java.util.Arrays;
-
-public class T0238ProductOfArrayExceptSelf {
+public class T0238_ProductOfArrayExceptSelf {
     public int[] productExceptSelf(int[] nums) {
         int prefix = 1;
         int[] products = new int[nums.length];
