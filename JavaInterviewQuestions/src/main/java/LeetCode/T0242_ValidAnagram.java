@@ -1,21 +1,17 @@
 package LeetCode;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 
 public class T0242_ValidAnagram {
     public boolean isAnagram(String s, String t) {
-        ArrayList<Character> letters = new ArrayList<>();
-
         if(s.length() != t.length()) return false;
 
-        for(int i = 0; i < s.length(); i++) {
-            letters.add(s.charAt(i));
-        }
+        char[] sArr = s.toCharArray();
+        char[] tArr = t.toCharArray();
 
-        for(int i = 0; i < t.length(); i++) {
-            if(!letters.contains(t.charAt(i))) return false;
-            letters.remove((Character) t.charAt(i));
-        }
-        return true;
+        Arrays.sort(sArr);
+        Arrays.sort(tArr);
+
+        return Arrays.equals(sArr, tArr);
     }
 }
