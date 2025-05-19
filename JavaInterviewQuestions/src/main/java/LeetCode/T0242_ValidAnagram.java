@@ -14,6 +14,7 @@ public class T0242_ValidAnagram {
 
         for(int i = 0; i < t.length(); i++) {
             if(!letters.contains(t.charAt(i))) return false;
+            letters.remove((Character) t.charAt(i));
         }
         return true;
     }
