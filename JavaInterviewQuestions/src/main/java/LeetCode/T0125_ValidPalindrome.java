@@ -5,7 +5,7 @@ public class T0125_ValidPalindrome {
         String respond = s.replaceAll("[^a-zA-Z0-9]", "");
         respond = respond.toLowerCase();
 
-        for(int i = 0; i < s.length()/2; i++) {
+        for(int i = 0; i < respond.length()/2; i++) {
             if (respond.charAt(i) == respond.charAt(respond.length() - i - 1)) continue;
             return false;
         }
