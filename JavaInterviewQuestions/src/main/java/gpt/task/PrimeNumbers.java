@@ -6,25 +6,25 @@ public class PrimeNumbers {
 
     public static ArrayList<Integer> nPrimeNumbers (int n) {
         int max = Integer.MAX_VALUE;
-        if (n < 2) return null;
+        if (n < 2) return new ArrayList<>();
 
-        boolean status;
+        boolean isComposite;
         ArrayList<Integer> primeNumbers = new ArrayList<>();
         primeNumbers.add(2);
 
-        for (int i = 3; i < max; i++) {
-            status = false;
+        for (int i = 3; i < max; i += 2) {
+            isComposite = false;
             if (primeNumbers.size() == n) {
                 break;
             }
 
-            for (int j = 2; j < i; j++) {
+            for (int j = 2; j * j < i; j++) {
                 if(i % j == 0) {
-                    status = true;
+                    isComposite = true;
                     break;
                 }
             }
-            if (!status) primeNumbers.add(i);
+            if (!isComposite) primeNumbers.add(i);
         }
         return primeNumbers;
     }
