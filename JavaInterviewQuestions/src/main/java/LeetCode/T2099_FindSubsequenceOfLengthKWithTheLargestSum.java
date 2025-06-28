@@ -20,9 +20,15 @@ public class T2099_FindSubsequenceOfLengthKWithTheLargestSum {
 
         int[] answer = new int[k];
         for (int i = 0; i < k; i++) {
-            answer[i] = chosen[indexes[i]];
+            answer[i] = nums[indexes[i]];
         }
 
         return answer;
+    }
+
+    public static void main(String[] args) {
+        int[] numbers = {3,4,3,3};
+
+        System.out.println(Arrays.toString(maxSubsequence(numbers, 3)));
     }
 }
