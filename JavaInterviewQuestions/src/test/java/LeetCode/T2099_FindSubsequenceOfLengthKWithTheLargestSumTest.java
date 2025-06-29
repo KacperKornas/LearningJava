@@ -1,4 +1,4 @@
-package gpt.LeetCode;
+package LeetCode;
 
 import LeetCode.T2099_FindSubsequenceOfLengthKWithTheLargestSum;
 import org.junit.jupiter.api.Test;
