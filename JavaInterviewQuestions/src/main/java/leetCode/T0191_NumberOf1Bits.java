@@ -1,4 +1,4 @@
-package LeetCode;
+package leetCode;
 
 public class T0191_NumberOf1Bits {
     public int[] countBits(int n) {

@@ -1,4 +1,4 @@
-package LeetCode;
+package leetCode;
 
 public class T0190_ReverseBits {
     public int reverseBits(int n) {

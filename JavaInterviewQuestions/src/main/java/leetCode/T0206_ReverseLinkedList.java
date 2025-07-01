@@ -1,4 +1,4 @@
-package LeetCode;
+package leetCode;
 
 public class T0206_ReverseLinkedList {
       static class ListNode {

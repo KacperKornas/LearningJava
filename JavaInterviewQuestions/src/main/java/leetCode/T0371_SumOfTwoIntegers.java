@@ -1,4 +1,4 @@
-package LeetCode;
+package leetCode;
 
 public class T0371_SumOfTwoIntegers {
     public int getSum(int a, int b) {

@@ -1,6 +1,5 @@
-package LeetCode;
+package leetCode;
 
-import LeetCode.T2099_FindSubsequenceOfLengthKWithTheLargestSum;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;

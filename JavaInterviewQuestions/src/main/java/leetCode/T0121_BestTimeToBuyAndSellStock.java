@@ -1,4 +1,4 @@
-package LeetCode;
+package leetCode;
 
 public class T0121_BestTimeToBuyAndSellStock {
     public boolean isPalindrome(String s) {

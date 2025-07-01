@@ -1,4 +1,4 @@
-package LeetCode;
+package leetCode;
 
 public class T0387_FirstUniqueCharacterInAString {
     public int firstUniqChar(String s) {
