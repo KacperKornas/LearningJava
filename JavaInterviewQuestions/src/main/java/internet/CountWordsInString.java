@@ -6,14 +6,14 @@ import java.util.Map;
 
 public class CountWordsInString {
 
-    public static HashMap countWords(String words) {
+    public static Map countWords(String words) {
 
         String text = words.replace(",", "");
         text = text.replace(".", "");
         text = text.toLowerCase();
         String[] arr = text.split(" ");
 
-        HashMap<String,Integer> calculateFrequency = new HashMap<>();
+        Map<String,Integer> calculateFrequency = new HashMap<>();
         for (int i = 0; i < arr.length; i++) {
             calculateFrequency.put(arr[i], calculateFrequency.getOrDefault(arr[i], 0) + 1);
         }
